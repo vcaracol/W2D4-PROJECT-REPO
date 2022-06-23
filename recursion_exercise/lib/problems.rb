@@ -12,9 +12,9 @@
 # pow(3, 4) # => 81
 # pow(4, 3) # => 64
 def pow(base, exponent)
-
+    return 1 if exponent == 0
+    base * pow(base, exponent - 1)
 end
-
 
 # Write a method, lucas_number(n), that takes in a number.
 # The method should return the n-th number of the Lucas Sequence.
@@ -35,9 +35,10 @@ end
 # lucas_number(5)   # =>    11
 # lucas_number(9)   # =>    76
 def lucas_number(n)
+    (return 2 if n == 0) || (return 1 if n == 1)
+    lucas_number(n - 1) + lucas_number(n - 2)
 
 end
-
 
 # Write a method, sum_array(array), that takes in an array of numbers.
 # The method should return the total sum of the elements.
